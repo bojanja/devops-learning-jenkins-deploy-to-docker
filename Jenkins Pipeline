@@ -2,7 +2,7 @@ pipeline {
     agent any 
     environment {
         //once you sign up for Docker hub, use that user_id here
-        registry = "bojanja/devops-learning"
+        registry = "bojanja/devops-learning-jenkins-deploy-to-docker"
         //- update your credentials ID after creating credentials for connecting to Docker Hub
         registryCredential = '0eaa1358-2ecd-4e9e-b5b7-78cf8c9bf20b'
         dockerImage = ''
@@ -11,7 +11,7 @@ pipeline {
     stages {
     stage('Cloning Git') {
             steps {
-                git credentialsId: '82455f0c-a33f-4ce5-a183-e16b0481264d', url: 'https://github.com/bojanja/devops-learning.git'
+                git credentialsId: '82455f0c-a33f-4ce5-a183-e16b0481264d', url: 'https://github.com/bojanja/devops-learning-jenkins-deploy-to-docker.git'
             }
         }
 
@@ -38,8 +38,8 @@ pipeline {
     // Stopping Docker containers for cleaner Docker run
     stage('docker stop container') {
          steps {
-            sh 'docker ps -f name=devops-learningContainer -q | xargs --no-run-if-empty docker container stop'
-            sh 'docker container ls -a -fname=devops-learningContainer -q | xargs -r docker container rm'
+            sh 'docker ps -f name=devops-learning-jenkins-deploy-to-dockerContainer -q | xargs --no-run-if-empty docker container stop'
+            sh 'docker container ls -a -fname=ddevops-learning-jenkins-deploy-to-dockerContainer -q | xargs -r docker container rm'
          }
        }
     
@@ -48,7 +48,7 @@ pipeline {
     stage('Docker Run') {
      steps{
          script {
-            dockerImage.run("-p 8096:80 --rm --name devops-learningContainer")
+            dockerImage.run("-p 8096:80 --rm --name devops-learning-jenkins-deploy-to-dockerContainer")
          }
       }
     }
