@@ -6,7 +6,7 @@ echo "Today is " . date("d.m.Y") . "<br>";
 echo "The time is " . date("h:i:sa") . "<br>";
 echo "Today is " . date("l") . "<br><br><br>";
 
-echo "Verzija: 3 <br><br>";
+echo "Verzija: 4 <br><br>";
 
 echo "Bojan";
 
