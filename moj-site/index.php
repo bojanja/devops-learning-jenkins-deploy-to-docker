@@ -8,6 +8,4 @@ echo "Today is " . date("l") . "<br><br><br>";
 
 echo "Verzija: 5 <br><br>";
 
-echo "Bojan";
-
 ?>
