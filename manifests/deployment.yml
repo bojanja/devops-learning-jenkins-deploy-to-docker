@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: azphptest 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: azphptest
+  template:
+    metadata:
+      labels:
+        app: azphptest 
+    spec:
+      containers:
+        - name: azphptest 
+          image: azcontainerregistrybojan.azurecr.io/azphptest
+          ports:
+          - containerPort: 80
