@@ -13,7 +13,7 @@ variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'c8cd0ff6-23e2-4e87-998b-3ac7016359e7'
   imageRepository: 'azphptest'
-  containerRegistry: 'azcontainerregistrybojan.azurecr.io'
+  containerRegistry: 'azphptest.azurecr.io'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
   imagePullSecret: 'azcontainerregistrybojand63c-auth'
