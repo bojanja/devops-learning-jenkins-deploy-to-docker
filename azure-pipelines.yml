@@ -11,7 +11,7 @@ resources:
 variables:
 
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: 'c8cd0ff6-23e2-4e87-998b-3ac7016359e7'
+  dockerRegistryServiceConnection: 'azphptest-registry-service-connection'
   imageRepository: 'azphptest'
   containerRegistry: 'azphptest.azurecr.io'
   dockerfilePath: '**/Dockerfile'
