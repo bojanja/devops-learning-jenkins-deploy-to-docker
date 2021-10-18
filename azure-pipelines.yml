@@ -53,7 +53,7 @@ stages:
     displayName: Deploy
     pool:
       vmImage: $(vmImageName)
-    environment: 'bojanjadevopslearningjenkinsdeploytodocker.iz-azure-pipeline-bojan'
+    environment: 'bojanjadevopslearningjenkinsdeploytodocker.default'
     strategy:
       runOnce:
         deploy:
